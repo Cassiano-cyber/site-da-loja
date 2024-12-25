@@ -1,161 +1,109 @@
-/* Importação de Fontes e Normalização */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+/* Importação de fontes e normalização */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css');
 
-/* Variáveis Globais */
+/* Variáveis globais de estilo */
 :root {
-    --primary-color: #ff4500; /* Vermelho forte */
-    --secondary-color: #ffa500; /* Laranja vibrante */
-    --accent-color: #ffd700; /* Amarelo dourado */
-    --background-color: #f5f5dc; /* Bege claro */
-    --text-color: #333; /* Preto suave */
-    --dark-bg: #222; /* Fundo escuro */
-    --light-text: #f9f9f9; /* Texto claro */
-    --border-radius: 12px;
-    --box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    --transition: all 0.3s ease;
+    --primary-color: #ff6347; /* Vermelho tomate */
+    --secondary-color: #ffd700; /* Amarelo ouro */
+    --accent-color: #ff9900; /* Laranja vibrante */
+    --background-color: #f5ddb0; /* Bege suave */
+    --dark-color: #2c2c2c; /* Preto escuro */
+    --text-color: #1a1a1a; /* Preto para textos */
+    --light-color: #ffffff; /* Branco */
+    --border-radius: 10px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
 }
 
-/* Estilos Globais */
+/* Estilização global */
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    font-family: 'Dancing Script', cursive;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    margin: 0;
-    color: var(--primary-color);
-}
-
-/* Header */
+/* Header fixo e estilizado */
 header {
-    background: var(--dark-bg);
-    color: var(--light-text);
-    text-align: center;
-    padding: 1.5em 0;
-    box-shadow: var(--box-shadow);
-    position: sticky;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    width: 100%;
+    z-index: 10;
+    padding: 1em;
+    text-align: center;
+    box-shadow: var(--box-shadow);
 }
 
 header h1 {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px var(--primary-color);
 }
 
-nav ul {
-    list-style: none;
+/* Container principal */
+main {
+    padding-top: 5em;
+    padding-bottom: 2em;
     display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 1em 0 0;
-    gap: 1.5em;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: var(--accent-color);
-    font-size: 1.2rem;
-    font-weight: bold;
-    position: relative;
-    transition: var(--transition);
-}
-
-nav ul li a:hover {
-    color: var(--secondary-color);
-    text-shadow: 0 0 10px var(--secondary-color);
-}
-
-/* Seção Principal */
+/* Seções principais */
 section {
-    margin: 2em auto;
+    width: 90%;
     max-width: 1200px;
-    padding: 2em;
-    background: var(--light-text);
+    background-color: var(--light-color);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    padding: 2em;
+    text-align: center;
 }
 
 section h2 {
-    font-size: 2rem;
+    font-size: 2em;
     margin-bottom: 1em;
+    color: var(--primary-color);
 }
 
-/* Produtos */
-#products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5em;
-}
-
-.pizza-item {
-    background: var(--dark-bg);
-    color: var(--light-text);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    transition: var(--transition);
-    box-shadow: var(--box-shadow);
-}
-
-.pizza-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.pizza-item img {
+/* Ajuste de imagens responsivas */
+section img {
     width: 100%;
+    max-width: 400px;
     height: auto;
-    border-bottom: 4px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed);
 }
 
-.pizza-item h3 {
-    font-size: 1.5rem;
-    margin: 1em 0 0.5em;
+section img:hover {
+    transform: scale(1.05);
 }
 
-.pizza-item p {
-    font-size: 1rem;
-    margin-bottom: 1em;
-}
-
-/* Botões */
+/* Botões gerais */
 button {
-    background: var(--primary-color);
-    color: var(--light-text);
-    padding: 0.8em 1.5em;
+    background-color: var(--primary-color);
+    color: var(--light-color);
     border: none;
     border-radius: var(--border-radius);
+    padding: 0.8em 1.5em;
+    font-size: 1em;
     cursor: pointer;
-    font-size: 1rem;
-    transition: var(--transition);
-    display: inline-block;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
 button:hover {
-    background: var(--secondary-color);
-    box-shadow: var(--box-shadow);
-    transform: translateY(-3px);
+    background-color: var(--accent-color);
+    transform: scale(1.1);
 }
 
-button:active {
-    transform: translateY(1px);
-}
-
-/* Carrinho */
-#cart-container {
-    margin-top: 2em;
-    padding: 1em;
-    background: var(--background-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
+/* Estilo do carrinho */
 #cart {
     list-style: none;
     padding: 0;
@@ -165,44 +113,77 @@ button:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em 0;
-    border-bottom: 1px solid var(--text-color);
+    margin: 0.5em 0;
+    padding: 0.5em;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
-#cart li button {
-    background: var(--secondary-color);
-    padding: 0.3em 0.8em;
+#cart .delete-item {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 0.3em;
+    font-size: 0.8em;
+    border-radius: var(--border-radius);
+    cursor: pointer;
 }
 
-/* Footer */
+#cart .delete-item:hover {
+    background-color: var(--accent-color);
+}
+
+/* Rodapé */
 footer {
-    background: var(--dark-bg);
-    color: var(--light-text);
+    background-color: var(--dark-color);
+    color: var(--light-color);
     text-align: center;
     padding: 1em;
     margin-top: 2em;
 }
 
 footer p {
-    font-size: 1rem;
+    margin: 0;
+    font-size: 0.9em;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 0.8em;
+        font-size: 2em;
     }
 
     section {
         padding: 1.5em;
     }
 
-    .pizza-item {
-        font-size: 0.9rem;
+    button {
+        padding: 0.6em 1.2em;
+        font-size: 0.9em;
+    }
+}  
+
+/* Estilização das partículas de fogos de artifício */
+.firework-particle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    animation: fireworks 2s ease-out forwards;
+}
+
+@keyframes fireworks {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
     }
 }
