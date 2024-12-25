@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explosão de Sabores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Produtos</a></li>
+                <li><a href="#avaliacoes">Avaliações</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Home -->
+    <section id="home">
+        <img src="home-image.jpg" alt="Explosão de Sabores">
+        <h1>Bem-vindo ao Explosão de Sabores</h1>
+    </section>
+
+    <!-- Seção Produtos -->
+    <section id="products">
+        <div class="product-category salgados">
+            <img src="salgados.jpg" alt="Salgados">
+            <h3>Salgados</h3>
+        </div>
+        <div class="product-category salgados-veganos">
+            <img src="salgados-veganos.jpg" alt="Salgados Veganos">
+            <h3>Salgados Veganos</h3>
+        </div>
+        <div class="product-category pizzas">
+            <img src="pizzas.jpg" alt="Pizzas">
+            <h3>Pizzas</h3>
+        </div>
+    </section>
+
+    <!-- Seção Avaliações -->
+    <section id="avaliacoes">
+        <h2>Avaliações</h2>
+        <div id="avaliacoes-lista"></div>
+        <form id="avaliacao-form">
+            <input type="text" id="nome" placeholder="Seu Nome" required>
+            <textarea id="comentario" placeholder="Deixe sua avaliação..." required></textarea>
+            <button type="submit">Enviar Avaliação</button>
+        </form>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contact">
+        <h2>Contato</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea id="message" required></textarea>
+            </div>
+            <button class="contact-button" type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Botão WhatsApp fixo -->
+    <div class="botao-whatsapp">
+        <i class="fa fa-whatsapp"></i>
+    </div>
+
+    <!-- Modal -->
+    <button id="openModalBtn" class="open-modal-btn">Abrir Modal</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Bem-vindo ao nosso site!</h2>
+            <p>Estamos felizes em ter você aqui. Explore nossos produtos e faça seu pedido.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
