@@ -36,32 +36,44 @@
         </nav>
     </header>
 
-    <!-- Seção Home -->
-    <section id="home">
-        <img src="home-image.jpg" alt="Explosão de Sabores">
-        <h1>Bem-vindo ao Explosão de Sabores</h1>
+   <section id="home">
+        <h2 class="dramaturgia-cu-subheader">Bem-vindo à Explosão Crocante!</h2>
+        <p>Descubra nossos salgados personalizados, salgados veganos e pizzas deliciosas.</p>
+        <img src="https://img.restaurantguru.com/rac9-Explosao-De-Sabores-menu.jpg" alt="Logo da Explosão Crocante" class="loaded" loading="lazy">
     </section>
 
-    <!-- Seção Produtos -->
+    <!-- Seção de Produtos -->
     <section id="products">
+        <h2 class="dramaturgia-cu-subheader">Nossos Produtos</h2>
+        <p class="product-info">Clique nas imagens abaixo para visualizar as opções de produtos e fazer o seu pedido!</p>
         <div class="product-category salgados">
-            <img src="salgados.jpg" alt="Salgados">
-            <h3>Salgados</h3>
+            <h3 class="dramaturgia-cu-category">Salgados Personalizados</h3>
+            <a href="https://cassiano-cyber.github.io/site-salgados/" target="_blank" aria-label="Ver Salgados Personalizados">
+                <img src="https://manealimentos.com.br/wp-content/uploads/2020/09/salgado-esquina-comprar.jpg" alt="Salgados Personalizados" class="loaded" loading="lazy">
+            </a>
+            <p>O seu salgado ao seu gosto.</p>
         </div>
         <div class="product-category salgados-veganos">
-            <img src="salgados-veganos.jpg" alt="Salgados Veganos">
-            <h3>Salgados Veganos</h3>
+            <h3 class="dramaturgia-cu-category">Salgados Veganos</h3>
+            <a href="https://cassiano-cyber.github.io/site-veganos/" target="_blank" aria-label="Ver Salgados Veganos">
+                <img src="https://th.bing.com/th/id/OIP.0d4JLumHvADzzxQK83BGBwHaE8?rs=1&pid=ImgDetMain" alt="Salgados Veganos" class="loaded" loading="lazy">
+            </a>
+            <p>Utilizamos ingredientes veganos frescos para criar salgados deliciosos e saudáveis.</p>
         </div>
         <div class="product-category pizzas">
-            <img src="pizzas.jpg" alt="Pizzas">
-            <h3>Pizzas</h3>
+            <h3 class="dramaturgia-cu-category">Pizzas</h3>
+            <a href="https://cassiano-cyber.github.io/site-pizzas/" target="_blank" aria-label="Ver Pizzas">
+                <img src="https://www.designi.com.br/images/preview/10006042.jpg" alt="Preparando Pizza" class="loaded" loading="lazy">
+            </a>
+            <p>Escolha seus ingredientes favoritos, aqui a autonomia é do cliente!</p>
         </div>
     </section>
 
     <!-- Seção Avaliações -->
     <section id="avaliacoes">
-        <h2>Avaliações</h2>
+        <h2>Avaliações de clientes</h2>
         <div id="avaliacoes-lista"></div>
+         <h3>Deixe sua Avaliação!</h3>
         <form id="avaliacao-form">
             <input type="text" id="nome" placeholder="Seu Nome" required>
             <textarea id="comentario" placeholder="Deixe sua avaliação..." required></textarea>
@@ -69,27 +81,29 @@
         </form>
     </section>
 
-    <!-- Seção Contato -->
+   <!-- Seção de Contato -->
     <section id="contact">
-        <h2>Contato</h2>
-        <form class="contact-form">
+        <h2 class="dramaturgia-cu-subheader">Contato</h2>
+        <p>Tem alguma dúvida ou quer fazer um pedido especial? Entre em contato conosco e responderemos o mais rápido possível!</p>
+        <form action="https://wa.me/5517996780618" method="get" target="_blank" class="contact-form">
             <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" required>
+                <label for="contact-name">Nome:</label>
+                <input type="text" id="contact-name" name="contact-name" required autocomplete="name">
             </div>
             <div class="form-group">
-                <label for="message">Mensagem</label>
-                <textarea id="message" required></textarea>
+                <label for="contact-message">Mensagem:</label>
+                <textarea id="contact-message" name="message" required autocomplete="off"></textarea>
             </div>
-            <button class="contact-button" type="submit">Enviar</button>
+            <button type="submit" class="contact-button">Enviar</button>
         </form>
+     <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/5517996780618?text=Olá,%20Eu%20gostaria%20de%20fazer%20um%20pedido." 
+       target="_blank" 
+       class="botao-whatsapp" 
+       aria-label="Entre em contato pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
     </section>
-
-    <!-- Botão WhatsApp fixo -->
-    <div class="botao-whatsapp">
-        <i class="fa fa-whatsapp"></i>
-    </div>
-
     <!-- Modal -->
     <button id="openModalBtn" class="open-modal-btn">Abrir Modal</button>
 
