@@ -102,6 +102,121 @@ button:hover {
     background-color: var(--accent-color);
     transform: scale(1.1);
 }
+/* Seção de Avaliações */
+#avaliacoes {
+    background-color: var(--white-color);
+    padding: 2em;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    margin-top: 2em;
+}
+
+#avaliacoes h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+#avaliacoes-lista {
+    text-align: left;
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #dedede;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+#avaliacoes h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-top: 1em;
+}
+
+#avaliacao-form {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#avaliacao-form input, #avaliacao-form textarea {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#avaliacao-form button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 0.75em;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#avaliacao-form button:hover {
+    background-color: #e5533d;
+}
+
+/* Seção de Contato */
+#contact {
+    background-color: #edd19b;
+    padding: 2em;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    margin-top: 2em;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: var(--primary-color);
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 0.75em;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #e5533d;
+}
 
 /* Estilo do carrinho */
 #cart {
