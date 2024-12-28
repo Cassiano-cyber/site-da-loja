@@ -47,7 +47,7 @@ header h1 {
 
 /* Container principal */
 main {
-    padding-top: 5em;
+    padding-top: 7em;
     padding-bottom: 2em;
     display: flex;
     flex-direction: column;
