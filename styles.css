@@ -1,29 +1,49 @@
 /* Importação de fontes e normalização */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
-@import url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 /* Variáveis globais de estilo */
 :root {
     --primary-color: #ff6347; /* Vermelho tomate */
-    --secondary-color: #ffd700; /* Amarelo ouro */
-    --accent-color: #ff9900; /* Laranja vibrante */
-    --background-color: #f5ddb0; /* Bege suave */
+    --secondary-color: #ffce5b; /* Amarelo suave */
+    --accent-color: #f7931e; /* Laranja vibrante */
+    --background-color: #fffaf1; /* Bege suave */
     --dark-color: #2c2c2c; /* Preto escuro */
-    --text-color: #1a1a1a; /* Preto para textos */
+    --text-color: #4a4a4a; /* Cinza escuro */
     --light-color: #ffffff; /* Branco */
-    --border-radius: 10px;
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    --transition-speed: 0.3s;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.4s;
 }
 
 /* Estilização global */
 body {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
     font-size: 16px;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px var(--accent-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
 }
 
 /* Header fixo e estilizado */
@@ -34,277 +54,128 @@ header {
     top: 0;
     width: 100%;
     z-index: 10;
-    padding: 1em;
-    text-align: center;
     box-shadow: var(--box-shadow);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    text-shadow: 2px 2px var(--primary-color);
+header nav .nav-link {
+    color: var(--light-color);
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    transition: color var(--transition-speed);
+}
+
+header nav .nav-link:hover {
+    color: var(--secondary-color);
 }
 
 /* Container principal */
 main {
-    padding-top: 7em;
+    padding-top: 6em;
     padding-bottom: 3em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2em;
 }
 
 /* Seções principais */
 section {
-    width: 90%;
-    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
     background-color: var(--light-color);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    padding: 2em;
     text-align: center;
 }
 
-section h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-    color: var(--primary-color);
-}
-
-/* Ajuste de imagens responsivas */
 section img {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     height: auto;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    transition: transform var(--transition-speed);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 section img:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Botões gerais */
-button {
+button,
+a.btn {
     background-color: var(--primary-color);
     color: var(--light-color);
     border: none;
     border-radius: var(--border-radius);
     padding: 0.8em 1.5em;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all var(--transition-speed);
+    box-shadow: var(--box-shadow);
 }
 
-button:hover {
+button:hover,
+a.btn:hover {
     background-color: var(--accent-color);
-    transform: scale(1.1);
-}
-/* Seção de Avaliações */
-#avaliacoes {
-    background-color: var(--white-color);
-    padding: 2em;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    margin-top: 2em;
+    transform: translateY(-3px);
 }
 
-#avaliacoes h2 {
-    text-align: center;
-    font-size: 2em;
-    color: #333;
-}
-
-#avaliacoes-lista {
-    text-align: left;
-    margin-top: 1em;
-    padding: 1em;
-    background-color: #dedede;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-#avaliacoes h3 {
-    font-size: 1.5em;
-    color: var(--primary-color);
-    margin-top: 1em;
-}
-
-#avaliacao-form {
-    margin-top: 1.5em;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-#avaliacao-form input, #avaliacao-form textarea {
+/* Formulários */
+input, textarea {
     width: 100%;
-    padding: 0.75em;
+    padding: 0.8em;
+    margin-bottom: 1rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-#avaliacao-form button {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border: none;
-    padding: 0.75em;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#avaliacao-form button:hover {
-    background-color: #e5533d;
-}
-
-/* Seção de Contato */
-#contact {
-    background-color: #edd19b;
-    padding: 2em;
-    box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
-    margin-top: 2em;
+    font-size: 1rem;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border var(--transition-speed), box-shadow var(--transition-speed);
 }
 
-#contact h2 {
-    text-align: center;
-    font-size: 2em;
-    color: #333;
+input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(255, 99, 71, 0.5);
+    outline: none;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin-top: 1.5em;
-}
-
-.contact-form .form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: var(--primary-color);
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 0.75em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-.contact-button {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border: none;
-    padding: 0.75em;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-button:hover {
-    background-color: #e5533d;
-}
-
-/* Estilo do carrinho */
-#cart {
-    list-style: none;
-    padding: 0;
-}
-
-#cart li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.5em 0;
-    padding: 0.5em;
-    background-color: var(--background-color);
+/* Avaliações */
+blockquote {
+    font-style: italic;
+    background-color: #fafafa;
+    border-left: 5px solid var(--primary-color);
+    padding: 1rem;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-}
-
-#cart .delete-item {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    padding: 0.3em;
-    font-size: 0.8em;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-}
-
-#cart .delete-item:hover {
-    background-color: var(--accent-color);
 }
 
 /* Rodapé */
 footer {
     background-color: var(--dark-color);
     color: var(--light-color);
+    padding: 1.5em 1rem;
     text-align: center;
-    padding: 1em;
-    margin-top: 2em;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
+    font-size: 1rem;
     margin: 0;
-    font-size: 0.9em;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
     }
 
     section {
-        padding: 1.5em;
+        padding: 1.5rem;
     }
 
-    button {
-        padding: 0.6em 1.2em;
-        font-size: 0.9em;
+    button, a.btn {
+        font-size: 1rem;
+        padding: 0.6em 1em;
     }
-}  
-
-/* Estilização das partículas de fogos de artifício */
-.firework-particle {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    animation: fireworks 2s ease-out forwards;
 }
-
-@keyframes fireworks {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 1;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.5);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(2.5);
-        opacity: 0;
-    }
-} 
-/* Alteração do padding nas seções com .py-5 */
-.py-5 {
-    padding-top: 7rem !important;
-    padding-bottom: 3rem !important;
-}
-
