@@ -43,7 +43,10 @@ header h1 {
     margin: 0;
     font-size: 2.5em;
     text-shadow: 2px 2px var(--light-color), 2px 2px 2px var(--primary-color);
-    color: var(--primary-color);
+    color: var(--light-color);
+    background: linear-gradient(to bottom, var(--primary-color), var(--light-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Container principal */
@@ -128,6 +131,7 @@ a.btn:hover {
     align-items: center;
     text-align: center;
     transition: transform var(--transition-speed);
+    box-sizing: border-box; /* Garante consistência no tamanho */
 }
 
 .product-card img {
@@ -156,6 +160,16 @@ a.btn:hover {
 
 .product-card button {
     margin-top: auto;
+}
+
+/* Garantir uniformidade no tamanho dos produtos */
+.products-container .product-card {
+    flex: 1 1 calc(33.333% - 1.5em); /* Define cards com largura proporcional */
+    max-width: 300px;
+}
+
+.products-container .product-card:nth-child(3n) {
+    margin-right: 0;
 }
 
 /* Responsividade para os produtos */
