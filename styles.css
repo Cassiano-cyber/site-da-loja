@@ -1,1 +1,256 @@
-/* Importação de fontes e normalização */ @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Dramaturgy&display=swap '); @importar url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css'); /* Variáveis ​​globais de estilo */ :root { --primary-color: #ff6347; /* Tomate vermelho */ --secondary-color: #ffd700; /* Amarelo ouro */ --accent-color: #f7931e; /* Laranja vibrante */ --background-color: #fffaf1; /* Bege suave */ --dark-color: #2c2c2c; /* Preto escuro */ --text-color: #4a4a4a; /* Cinza escuro */ --light-color: #ffffff; /* Branco */ --border-radius: 15px; --box-shadow: 0 6px 20px rgba(0, 0, 0, 0,15); --velocidade de transição: 0,4s; --overlay-color: rgba(0, 0, 0, 0,5); } /* Estilização global */ body { font-family: 'Dramaturgy', sans-serif; margem: 0; preenchimento: 0; cor de fundo: var(--cor de fundo); cor: var(--cor do texto); tamanho da fonte: 16px; altura da linha: 1,6; } h1, h2, h3 { família da fonte: 'Dancing Script', cursiva; cor: var(--primary-color); } h1 { tamanho da fonte: 3,5rem ; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Título mais escuro */ } h2 { font-size: 2.8rem; margin-bottom: 1rem; } h3 { font-size: 2rem ; color: var(--accent-color); } /* Cabeçalho fixo e estilizado */ header { background-color: var(--dark-color); color: var(--light-color); position: fixed ; topo: 0; largura: 100%; índice z: 10; preenchimento: 1rem; sombra da caixa: var(--sombra da caixa); alinhamento do texto: centro; } header h1 { font-size: 3rem; text-shadow: 2px 2px var(--light-color); color: var(--light-color); /* Visibilidade maior */ } /* Container principal */ main { padding-top: 7rem; padding-bottom: 3rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; } /* Seções principais */ section { width: 90%; max-width : 1200px; margin: 2rem auto; padding: 2rem; background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color)); /* Gradiente ajustado */ border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center; posição: relativa; overflow: oculto; } section:before { content: ''; posição: absoluta; topo: 0; esquerda: 0; largura: 100%; altura: 100%; fundo: var(--overlay-color); opacidade: 0; transição: opacidade var(--transition-speed); z-index: 1 ; border-radius: var(--border-radius); } seção:hover:before { opacidade: 0.1; } section h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-color); z-index: 2; position: relative; } /* Estilização de imagens */ section img { width: 100%; max-width: 450px; height: auto; border-radius: var(--border-radius); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); transition: transform var(--transition-speed), box-shadow var(--transition-speed); z-index: 2; } section img:hover { transform: scale(1.1) rotate(1deg); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); } /* Produtos nivelados */ .produtos-container { display: flex; flex-wrap: envoltório; justificar conteúdo: espaço uniformemente; lacuna: 2rem; } .produto { largura: calc(33,333% - 2rem); /* Para manter uma boa proporção */ min-width: 250px; cor de fundo: var(--light-color); raio da borda: var(--raio da borda); sombra da caixa: var(--sombra da caixa); preenchimento: 1rem; alinhamento de texto: centro; } .produto img { largura: 100%; largura máxima: 200px; altura: automático; margem inferior: 1rem; } .produto h3 { tamanho da fonte: 1,5rem; margem inferior: 0,5rem; } .produto p { tamanho da fonte: 1rem; cor: var(--cor do texto); } /* Botões gerais */ button, a.btn { background: linear-gradient(para a direita, var(--primary-color), var(--accent-color)); color: var(--light-color); border: none; border-radius: var(--border-radius); padding: 0.8em 1.5em; font-size: 1.1rem; text-decoration: none; transition: all var(--transition-speed); box-shadow: var(--box-shadow); font-family: 'Dancing Script', cursive; } button:hover, a.btn:hover { background: linear-gradient(para a direita, var(--accent-color), var(--primary-color)); transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); } /* Rodapé */ footer { background-color: var(--dark-color); color: var(--light-color); padding: 1.5em; text-align: center; font-size: 1rem; box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); } /* Responsabilidade */ @media (max-width: 768px) { h1 { font-size: 2.5rem; } h2 { font-size: 2.2rem; } section { padding: 1.5rem; } button, a.btn { font-size: 1rem; padding: 0.7em 1.2em; } .produtos-container { flex-direction: column; align-items: center; } .produto { width: 100%; max-width: 400px; } } ``` ### Alterações Realizadas: 1. **Gradiente de cima para baixo**: - O laranja (`var(--accent-color)`) ficou na parte superior e o amarelo (`var(--secondary-color)`) na parte inferior. 2. **Título sem cabeçalho**:transform var(--transition-speed), box-shadow var(--transition-speed); z-index: 2; } section img:hover { transform: scale(1.1) rotate(1deg); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); } /* Produtos nivelados */ .produtos-container { display: flex; flex-wrap: wrap; justify-content: space-evenly; gap: 2rem; } .produto { width: calc(33.333% - 2rem); /* Para manter uma boa proporção */ min-width: 250px; background-color: var(--light-color); border-radius: var(--border-radius); box-shadow: var(--box-shadow); padding: 1rem; text-align: center; } .produto img { width: 100%; max-width: 200px; height: auto; margin-bottom: 1rem; } .produto h3 { font-size: 1.5rem; margin-bottom: 0.5rem; } .produto p { font-size: 1rem; color: var(--text-color); } /* Botões gerais */ button, a.btn { background: linear-gradient(to right, var(--primary-color), var(--accent-color)); color: var(--light-color); border: none; border-radius: var(--border-radius); padding: 0.8em 1.5em; font-size: 1.1rem; text-decoration: none; transition: all var(--transition-speed); box-shadow: var(--box-shadow); font-family: 'Dancing Script', cursive; } button:hover, a.btn:hover { background: linear-gradient(to right, var(--accent-color), var(--primary-color)); transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); } /* Rodapé */ footer { background-color: var(--dark-color); color: var(--light-color); padding: 1.5em; text-align: center; font-size: 1rem; box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); } /* Resposta */ @media (max-width: 768px) { h1 { font-size: 2.5rem; } h2 { font-size: 2.2rem; } seção { preenchimento: 1,5rem; } botão, a.btn {tamanho da fonte: 1rem; preenchimento: 0,7em 1,2em; } .produtos-container { flex-direction: coluna; alinhar itens: centro; } .produto { largura: 100%; largura máxima: 400px; } } ``` ### Alterações Realizadas: 1. **Gradiente de cima para baixo**: - O laranja (`var(--accent-color)`) ficou na parte superior e o amarelo (`var(--secondary-color)`) na parte inferior. 2. **Título sem cabeçalho**:transform var(--transition-speed), box-shadow var(--transition-speed); z-index: 2; } section img:hover { transform: scale(1.1) rotate(1deg); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); } /* Produtos nivelados */ .produtos-container { display: flex; flex-wrap: wrap; justify-content: space-evenly; gap: 2rem; } .produto { width: calc(33.333% - 2rem); /* Para manter uma boa proporção */ min-width: 250px; background-color: var(--light-color); border-radius: var(--border-radius); box-shadow: var(--box-shadow); padding: 1rem; text-align: center; } .produto img { width: 100%; max-width: 200px; height: auto; margin-bottom: 1rem; } .produto h3 { font-size: 1.5rem; margin-bottom: 0.5rem; } .produto p { font-size: 1rem; color: var(--text-color); } /* Botões gerais */ button, a.btn { background: linear-gradient(to right, var(--primary-color), var(--accent-color)); color: var(--light-color); border: none; border-radius: var(--border-radius); padding: 0.8em 1.5em; font-size: 1.1rem; text-decoration: none; transition: all var(--transition-speed); box-shadow: var(--box-shadow); font-family: 'Dancing Script', cursive; } button:hover, a.btn:hover { background: linear-gradient(to right, var(--accent-color), var(--primary-color)); transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); } /* Rodapé */ footer { background-color: var(--dark-color); color: var(--light-color); padding: 1.5em; text-align: center; font-size: 1rem; box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); } /* Resposta */ @media (max-width: 768px) { h1 { font-size: 2.5rem; } h2 { font-size: 2.2rem; } seção { preenchimento: 1,5rem; } botão, a.btn {tamanho da fonte: 1rem; preenchimento: 0,7em 1,2em; } .produtos-container { flex-direction: coluna; alinhar itens: centro; } .produto { largura: 100%; largura máxima: 400px; } } ``` ### Alterações Realizadas: 1. **Gradiente de cima para baixo**: - O laranja (`var(--accent-color)`) ficou na parte superior e o amarelo (`var(--secondary-color)`) na parte inferior. 2. **Título sem cabeçalho**:auto; margin-bottom: 1rem; } .produto h3 { font-size: 1.5rem; margin-bottom: 0.5rem; } .produto p { font-size: 1rem; color: var(--text-color); } /* Botões gerais */ button, a.btn { background: linear-gradient(to right, var(--primary-color), var(--accent-color)); color: var(--light-color); border: none; border-radius: var(--border-radius); padding: 0.8em 1.5em; font-size: 1.1rem; text-decoration: none; transition: all var(--transition-speed); box-shadow: var(--box-shadow); font-family: 'Dancing Script', cursive; } button:hover, a.btn:hover { background: linear-gradient(to right, var(--accent-color), var(--primary-color)); transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); } /* Rodapé */ footer { background-color: var(--dark-color); color: var(--light-color); padding: 1.5em; text-align: center; font-size: 1rem; box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); } /* Resposta */ @media (max-width: 768px) { h1 { font-size: 2.5rem; } h2 { font-size: 2.2rem; } seção { preenchimento: 1,5rem; } botão, a.btn {tamanho da fonte: 1rem; preenchimento: 0,7em 1,2em; } .produtos-container { flex-direction: coluna; alinhar itens: centro; } .produto { largura: 100%; largura máxima: 400px; } } ``` ### Alterações Realizadas: 1. **Gradiente de cima para baixo**: - O laranja (`var(--accent-color)`) ficou na parte superior e o amarelo (`var(--secondary-color)`) na parte inferior. 2. **Título sem cabeçalho**:auto; margin-bottom: 1rem; } .produto h3 { font-size: 1.5rem; margin-bottom: 0.5rem; } .produto p { font-size: 1rem; color: var(--text-color); } /* Botões gerais */ button, a.btn { background: linear-gradient(to right, var(--primary-color), var(--accent-color)); color: var(--light-color); border: none; border-radius: var(--border-radius); padding: 0.8em 1.5em; font-size: 1.1rem; text-decoration: none; transition: all var(--transition-speed); box-shadow: var(--box-shadow); font-family: 'Dancing Script', cursive; } button:hover, a.btn:hover { background: linear-gradient(to right, var(--accent-color), var(--primary-color)); transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); } /* Rodapé */ footer { background-color: var(--dark-color); color: var(--light-color); padding: 1.5em; text-align: center; font-size: 1rem; box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); } /* Resposta */ @media (max-width: 768px) { h1 { font-size: 2.5rem; } h2 { font-size: 2.2rem; } seção { preenchimento: 1,5rem; } botão, a.btn {tamanho da fonte: 1rem; preenchimento: 0,7em 1,2em; } .produtos-container { flex-direction: coluna; alinhar itens: centro; } .produto { largura: 100%; largura máxima: 400px; } } ``` ### Alterações Realizadas: 1. **Gradiente de cima para baixo**: - O laranja (`var(--accent-color)`) ficou na parte superior e o amarelo (`var(--secondary-color)`) na parte inferior. 2. **Título sem cabeçalho**:centro; } .produto { largura: 100%; largura máxima: 400px; } } ``` ### Alterações Realizadas: 1. **Gradiente de cima para baixo**: - O laranja (`var(--accent-color)`) ficou na parte superior e o amarelo (`var(-- cor secundária)`) na parte inferior. 2. **Título sem cabeçalho**:centro; } .produto { largura: 100%; largura máxima: 400px; } }
+/* Importação de fontes e normalização */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css');
+
+/* Variáveis globais de estilo */
+:root {
+    --primary-color: #ff6347; /* Vermelho tomate */
+    --secondary-color: #ffd700; /* Amarelo ouro */
+    --accent-color: #ff9900; /* Laranja vibrante */
+    --background-color: #f5ddb0; /* Bege suave */
+    --dark-color: #2c2c2c; /* Preto escuro */
+    --text-color: #1a1a1a; /* Preto para textos */
+    --light-color: #ffffff; /* Branco */
+    --border-radius: 10px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Estilização global */
+body {
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+/* Header fixo e estilizado */
+header {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 1em;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: var(--light-color); /* Branco */
+    text-shadow: 2px 2px var(--primary-color); /* Vermelho para destaque */
+}
+
+/* Container principal */
+main {
+    padding-top: 7em;
+    padding-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+/* Seções principais */
+section {
+    width: 90%;
+    max-width: 1200px;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2em;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: var(--primary-color);
+}
+
+/* Ajuste de imagens responsivas */
+section img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed);
+}
+
+section img:hover {
+    transform: scale(1.05);
+}
+
+/* Botões gerais com gradiente */
+button,
+a.btn {
+    background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color)); /* Gradiente laranja para amarelo */
+    color: var(--light-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.8em 1.5em;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all var(--transition-speed);
+    box-shadow: var(--box-shadow);
+    font-family: 'Dancing Script', cursive;
+}
+
+button:hover,
+a.btn:hover {
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color)); /* Inverte no hover */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Seção de Avaliações */
+#avaliacoes {
+    background-color: var(--light-color);
+    padding: 2em;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    margin-top: 2em;
+}
+
+#avaliacoes h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+#avaliacoes-lista {
+    text-align: left;
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #dedede;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+#avaliacoes h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-top: 1em;
+}
+
+#avaliacao-form {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#avaliacao-form input, #avaliacao-form textarea {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#avaliacao-form button {
+    background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color)); /* Gradiente laranja para amarelo */
+    color: var(--light-color);
+    border: none;
+    border-radius: 4px;
+    padding: 0.75em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+#avaliacao-form button:hover {
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color)); /* Inverte no hover */
+}
+
+/* Seção de Contato */
+#contact {
+    background-color: #edd19b;
+    padding: 2em;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    margin-top: 2em;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: var(--primary-color);
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-button {
+    background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color)); /* Gradiente laranja para amarelo */
+    color: var(--light-color);
+    border: none;
+    padding: 0.75em;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.contact-button:hover {
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color)); /* Inverte no hover */
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    section {
+        padding: 1.5em;
+    }
+
+    button {
+        padding: 0.6em 1.2em;
+        font-size: 0.9em;
+    }
+}
