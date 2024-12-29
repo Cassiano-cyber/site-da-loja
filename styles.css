@@ -4,9 +4,9 @@
 
 /* Variáveis globais de estilo */
 :root {
-    --primary-color: #ff6347; /* Vermelho tomate */
+    --primary-color: #ff4500; /* Vermelho tomate mais forte */
     --secondary-color: #ffd700; /* Amarelo ouro */
-    --accent-color: #ff9900; /* Laranja vibrante */
+    --accent-color: #ff7f50; /* Laranja mais forte */
     --background-color: #f5ddb0; /* Bege suave */
     --dark-color: #2c2c2c; /* Preto escuro */
     --text-color: #1a1a1a; /* Preto para textos */
@@ -41,9 +41,9 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 3rem;
-    color: var(--light-color); /* Branco */
-    text-shadow: 2px 2px var(--primary-color); /* Vermelho para destaque */
+    font-size: 2.5em;
+    text-shadow: 2px 2px var(--light-color), 2px 2px 2px var(--primary-color);
+    color: var(--primary-color);
 }
 
 /* Container principal */
@@ -90,7 +90,7 @@ section img:hover {
 /* Botões gerais com gradiente */
 button,
 a.btn {
-    background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color)); /* Gradiente laranja para amarelo */
+    background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
     color: var(--light-color);
     border: none;
     border-radius: var(--border-radius);
@@ -104,125 +104,70 @@ a.btn {
 
 button:hover,
 a.btn:hover {
-    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color)); /* Inverte no hover */
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Seção de Avaliações */
-#avaliacoes {
+/* Ajuste dos produtos para o mesmo tamanho */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+}
+
+.product-card {
     background-color: var(--light-color);
-    padding: 2em;
-    box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
-    margin-top: 2em;
-}
-
-#avaliacoes h2 {
+    box-shadow: var(--box-shadow);
+    padding: 1.5em;
+    width: 300px; /* Definido o mesmo tamanho para todos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    font-size: 2em;
-    color: #333;
+    transition: transform var(--transition-speed);
 }
 
-#avaliacoes-lista {
-    text-align: left;
-    margin-top: 1em;
-    padding: 1em;
-    background-color: #dedede;
+.product-card img {
+    width: 100%;
+    height: 200px; /* Definido para todas as imagens o mesmo tamanho */
+    object-fit: cover; /* Garante que a imagem seja cortada proporcionalmente */
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+    margin-bottom: 1em;
 }
 
-#avaliacoes h3 {
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
     font-size: 1.5em;
     color: var(--primary-color);
-    margin-top: 1em;
+    margin: 0.5em 0;
 }
 
-#avaliacao-form {
-    margin-top: 1.5em;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-#avaliacao-form input, #avaliacao-form textarea {
-    width: 100%;
-    padding: 0.75em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.product-card p {
     font-size: 1em;
+    color: var(--text-color);
+    margin: 0.5em 0 1em;
 }
 
-#avaliacao-form button {
-    background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color)); /* Gradiente laranja para amarelo */
-    color: var(--light-color);
-    border: none;
-    border-radius: 4px;
-    padding: 0.75em;
-    font-size: 1em;
-    cursor: pointer;
-    transition: all var(--transition-speed);
+.product-card button {
+    margin-top: auto;
 }
 
-#avaliacao-form button:hover {
-    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color)); /* Inverte no hover */
-}
+/* Responsividade para os produtos */
+@media (max-width: 768px) {
+    .products-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* Seção de Contato */
-#contact {
-    background-color: #edd19b;
-    padding: 2em;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    margin-top: 2em;
-}
-
-#contact h2 {
-    text-align: center;
-    font-size: 2em;
-    color: #333;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin-top: 1.5em;
-}
-
-.contact-form .form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: var(--primary-color);
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 0.75em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-.contact-button {
-    background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color)); /* Gradiente laranja para amarelo */
-    color: var(--light-color);
-    border: none;
-    padding: 0.75em;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: all var(--transition-speed);
-}
-
-.contact-button:hover {
-    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color)); /* Inverte no hover */
+    .product-card {
+        width: 100%;
+    }
 }
 
 /* Rodapé */
@@ -237,20 +182,4 @@ footer {
 footer p {
     margin: 0;
     font-size: 0.9em;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    section {
-        padding: 1.5em;
-    }
-
-    button {
-        padding: 0.6em 1.2em;
-        font-size: 0.9em;
-    }
 }
